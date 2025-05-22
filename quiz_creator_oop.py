@@ -40,3 +40,9 @@ class QuestionWriter:
             for option, answer in answers.items():
                 file.write(f"Option {option}: {answer}\n")
             file.write(f"Correct Answer: {correct_answer}\n\n")
+
+class ContinueOrQuit:
+   another_question = input("Do you want to add another question? (y to continue and any other letter to exit): ")
+   if another_question.lower() != "y":
+      print("Exiting the program.")
+      exit()
