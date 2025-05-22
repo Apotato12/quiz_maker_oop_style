@@ -1,8 +1,8 @@
 import os
 
 class Filename:
-    def file_name(self, file_name = "quiz.txt"):
-     self.file_name = file_name
+    def set_file_name(self, file_name="quiz.txt"):
+        self.file_name = file_name
     
 class FileMaker:
    def make_file(self, file_name):
