@@ -15,7 +15,14 @@ def make_file(self):
         else:
             print(f"File '{self.file_name}' already exists.")
 
-class QuestionAsker:
+class QuestionParts:
     def ask_question(self):
-        """Asks the user to enter a question."""
         return input("Enter a question: ")
+    
+    def get_answers(self):
+        answers = {}
+        answers['a'] = input("Please enter option a: ")
+        answers['b'] = input("Please enter option b: ")
+        answers['c'] = input("Please enter option c: ")
+        answers['d'] = input("Please enter option d: ")
+        return answers
