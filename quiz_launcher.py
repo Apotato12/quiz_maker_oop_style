@@ -12,7 +12,8 @@ class QuizLauncher(Filename, FileMaker, QuestionParts, QuestionWriter):
             question = self.ask_question()
             answers = self.get_answers()
             correct_answer = self.get_correct_answer()
-            
+            self.save_question_to_file(question, answers, correct_answer)
+
             if not self.another_question():
                 print("Exiting the program.")
                 break
