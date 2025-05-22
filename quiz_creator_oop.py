@@ -26,3 +26,6 @@ class QuestionParts:
         answers['c'] = input("Please enter option c: ")
         answers['d'] = input("Please enter option d: ")
         return answers
+    
+    def get_correct_answer(self):
+         return input("Please enter the correct answer (a, b, c, or d): ")
