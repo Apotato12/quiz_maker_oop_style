@@ -29,3 +29,14 @@ class QuestionParts:
     
     def get_correct_answer(self):
          return input("Please enter the correct answer (a, b, c, or d): ")
+    
+class QuestionWriter:
+    def __init__(self, file_name):
+        self.file_name = file_name
+
+    def save_question_to_file(self, question, answers, correct_answer):
+        with open(self.file_name, "a") as file:
+            file.write(f"Question: {question}\n")
+            for option, answer in answers.items():
+                file.write(f"Option {option}: {answer}\n")
+            file.write(f"Correct Answer: {correct_answer}\n\n")
