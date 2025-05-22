@@ -28,10 +28,8 @@ class QuestionParts:
          return input("Please enter the correct answer (a, b, c, or d): ")
     
     def another_question(self):
-            another_question = input("Do you want to add another question? (y to continue and any other letter to exit): ")
-            if another_question.lower() != 'y':
-               print("Exiting the program.")
-               exit()
+        another_question = input("Do you want to add another question? (y to continue and any other letter to exit): ")
+        return another_question.lower() == 'y'
     
 class QuestionWriter:
     def __init__(self, file_name):
