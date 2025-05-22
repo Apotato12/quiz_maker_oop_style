@@ -14,3 +14,8 @@ def make_file(self):
             print(f"File '{self.file_name}' has been created.")
         else:
             print(f"File '{self.file_name}' already exists.")
+
+class QuestionAsker:
+    def ask_question(self):
+        """Asks the user to enter a question."""
+        return input("Enter a question: ")
