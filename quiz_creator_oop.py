@@ -5,15 +5,12 @@ class Filename:
         self.file_name = file_name
     
 class FileMaker:
-    def filename(self, filename_obj):
-        self.file_name = filename_obj.file_name
-
-def make_file(self):
-        if not os.path.exists(self.file_name):
-            open(self.file_name, 'w').close()
-            print(f"File '{self.file_name}' has been created.")
+    def make_file(self, file_name):
+        if not os.path.exists(file_name):
+            open(file_name, 'w').close()
+            print(f"File '{file_name}' has been created.")
         else:
-            print(f"File '{self.file_name}' already exists.")
+            print(f"File '{file_name}' already exists.")
 
 class QuestionParts:
     def ask_question(self):
@@ -33,16 +30,9 @@ class QuestionParts:
 class QuestionWriter:
     def __init__(self, file_name):
         self.file_name = file_name
-
     def save_question_to_file(self, question, answers, correct_answer):
         with open(self.file_name, "a") as file:
             file.write(f"Question: {question}\n")
             for option, answer in answers.items():
                 file.write(f"Option {option}: {answer}\n")
             file.write(f"Correct Answer: {correct_answer}\n\n")
-
-class ContinueOrQuit:
-   another_question = input("Do you want to add another question? (y to continue and any other letter to exit): ")
-   if another_question.lower() != "y":
-      print("Exiting the program.")
-      exit()
