@@ -22,3 +22,8 @@ class QuestionItems:
         self.options = options
     def set_correct_answer(self, correct_answer):
         self.correct_answer = correct_answer
+
+def options(self,options):
+    self.options = options
+def correct_answer(self, correct_answer):
+    self.correct_answer = correct_answer
