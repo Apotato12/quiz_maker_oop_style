@@ -2,7 +2,7 @@ import os
 import random
 
 class FileCheck:
-    def set_file_name(self, file_name="quiz.txt"):
+    def __init__(self, file_name="quiz.txt"):
         self.file_name = file_name
 
     def check_if_file_exists(self):
@@ -28,8 +28,8 @@ def options(self,options):
 def correct_answer(self, correct_answer):
     self.correct_answer = correct_answer
 
-class Quiz(QuizFile):
-    def __init__(self, file_name):
+class Quiz(FileCheck):
+    def __init__(self, file_name="quiz.txt"):
         super().__init__(file_name)
         self.questions = []
     def read_questions(self):
@@ -42,7 +42,7 @@ class Quiz(QuizFile):
             line = lines[index].strip()
             if line.startswith("Question: "):
                 question_text = line[len("Question: "):]
-                question = Question(question_text)
+                question = QuestionItems(question_text)
                 options = self.options_reader(lines, index)
                 question.set_options(options)
                 correct_answer = self.correct_answer_reader(lines, index + len(options) + 1)
@@ -64,7 +64,8 @@ class Quiz(QuizFile):
             else:
                 options[option_letter] = ""
         return options
-    def correct_answer_reader(self, index):
+    
+    def correct_answer_reader(self, lines, index):
         correct_line = lines[index]
         if correct_line.startswith("Correct Answer:"):
             return correct_line[len("Correct Answer:"):].strip().lower()
