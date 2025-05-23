@@ -12,3 +12,13 @@ class FileCheck:
         else:
             print("Quiz file does not exist. Please make one")
             return False
+        
+class QuestionItems:
+    def __init__(self, question_text):
+        self.question_text = question_text
+        self.options = {}
+        self.correct_answer = ""
+    def set_options(self, options):
+        self.options = options
+    def set_correct_answer(self, correct_answer):
+        self.correct_answer = correct_answer
