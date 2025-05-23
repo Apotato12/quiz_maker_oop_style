@@ -69,6 +69,8 @@ class Quiz(FileCheck):
         correct_line = lines[index]
         if correct_line.startswith("Correct Answer:"):
             return correct_line[len("Correct Answer:"):].strip().lower()
+        return ""
+    
     def display_questions(self):
         random.shuffle(self.questions)
         score = 0
